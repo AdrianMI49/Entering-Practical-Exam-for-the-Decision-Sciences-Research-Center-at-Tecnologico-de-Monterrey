@@ -373,10 +373,23 @@ fprintf(fid,"- Based on historical World Bank indicators; assumes structural sta
 fprintf(fid,"- Immediate absolute percentage-point increases assumed.\n");
 fprintf(fid,"- No modeling of demand feedbacks, fleet turnover, or grid efficiency.\n\n");
 
-fprintf(fid,"## Actionable next steps for policymakers\n");
-fprintf(fid,"- Commission techno-economic studies of replacing coal capacity.\n");
+fprintf(fid,"## Actionable next steps for policymakers");
+fprintf(fid,- "**Use the rankings to target high-impact countries**: prioritize those in");
+fprintf(fid,"- `top_countries_by_marginal_effect_q5.csv` (best per +1pp renewable gain), and `top_countries_by_pct_reduction_q5.csv` (largest absolute reductions under +10pp).");
 fprintf(fid,"- Use renewable auctions, grid flexibility, EV incentives, industrial efficiency programs.\n");
-fprintf(fid,"- Use provided CSVs for regional targeting.\n\n");
+
+fprintf(fid,"- **Design investment packages tailored to context**:");
+fprintf(fid,"- In coal-dependent countries, focus on **coal-to-renewable replacement** for maximum near-term reduction. ");
+fprintf(fid,"- In high-growth economies with rising demand, combine **renewables + grid modernization** to prevent lock-in of fossil capacity. ");
+fprintf(fid,"- In countries with high vehicle ownership, pair renewable expansion with **transport electrification**.");
+
+fprintf(fid,"- **Integrate complementary measures**:");
+fprintf(fid,"- Grid flexibility and storage to ensure renewable penetration translates into real CO₂ reductions.");
+fprintf(fid,"- Incentives for industrial efficiency and electrification to magnify the renewable effect. ");
+
+fprintf(fid,"- **Operationalize the findings**: ");
+fprintf(fid,"- Use `strategic_simulation_results_per_country.csv` to rank investment opportunities within your policy scope.");
+fprintf(fid,"- Track changes in `ClsProb_plus10pp` as an indicator of likelihood of becoming a “successful reducer” within 5 years.");
 
 fclose(fid);
 fprintf("Strategic recommendation markdown written to %s\n", mdfile);
@@ -384,3 +397,4 @@ fprintf("Strategic recommendation markdown written to %s\n", mdfile);
 % -------------------------------
 % End
 % -------------------------------
+
