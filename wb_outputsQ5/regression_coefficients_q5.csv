@@ -1,0 +1,13 @@
+Predictor,Coefficient
+GDPcurrentInUS,0.00161982667919208
+GDPperCapitaUS,1.44473399794819e-10
+PopulationTotal,-7.82836584246537e-08
+EnergyUsePerCapitaKgOilEq,3.89581116874558e-11
+UrbanPopulationPercentage,6.14351006009923e-13
+EducationExpenditurePercentageGDP,2.76750847639535e-14
+RenewableEnergySharePercentage,-1.49271590511101e-12
+MotorVehiclesPer1000People,3.18205253581322e-12
+ElectricityFromCoalPerc,5.00908933609769e-13
+ElectricityFromNuclearPerc,2.62164154771228e-14
+ElectricityFromRenewablesPerc,-3.74435988617924e-14
+ElectricityFromFossilFuelsPerc,8.88428340350224e-13
