@@ -4,7 +4,7 @@
 
 ## Simulation setup
 - Scenarios simulated: +5, +10, +20 percentage points in national renewable energy share.
-- Regression model: ridge linear regression trained on available World Bank indicators.
+- Regression model: ridge linear regression/L2 restriction trained on available World Bank indicators.
 - Classifier: decision tree trained to predict countries with historically significant decadal CO₂ decline.
 
 ## Key result summaries (snapshot: latest year in dataset = 2020)
@@ -37,12 +37,26 @@
 - The classifier probability of becoming a 'successful' reducer increases for many countries after raising renewables.
 
 ## Assumptions & limitations
-- Based on historical World Bank indicators; assumes structural stability.
+- Based on historical World Bank indicators; assumes structural stability, but we took a small amount of indicators, other indicators could be taken in account.
 - Immediate absolute percentage-point increases assumed.
-- No modeling of demand feedbacks, fleet turnover, or grid efficiency.
 
 ## Actionable next steps for policymakers
-- Commission techno-economic studies of replacing coal capacity.
-- Use renewable auctions, grid flexibility, EV incentives, industrial efficiency programs.
-- Use provided CSVs for regional targeting.
+
+- **Use the rankings to target high-impact countries**: prioritize those in  
+  - `top_countries_by_marginal_effect_q5.csv` (best per +1pp renewable gain), and  
+  - `top_countries_by_pct_reduction_q5.csv` (largest absolute reductions under +10pp).  
+
+- **Design investment packages tailored to context**:  
+  - In coal-dependent countries, focus on **coal-to-renewable replacement** for maximum near-term reduction.  
+  - In high-growth economies with rising demand, combine **renewables + grid modernization** to prevent lock-in of fossil capacity.  
+  - In countries with high vehicle ownership, pair renewable expansion with **transport electrification**.  
+
+- **Integrate complementary measures**:  
+  - Grid flexibility and storage to ensure renewable penetration translates into real CO₂ reductions.  
+  - Incentives for industrial efficiency and electrification to magnify the renewable effect.  
+
+- **Operationalize the findings**:  
+  - Use `strategic_simulation_results_per_country.csv` to rank investment opportunities within your policy scope.  
+  - Track changes in `ClsProb_plus10pp` as an indicator of likelihood of becoming a “successful reducer” within 5 years.  
+
 
