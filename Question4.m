@@ -107,9 +107,10 @@ xticklabels(featNames(idx(1:10)));
 xtickangle(45);
 ylabel("Importance");
 title("Top 10 Most Important Features");
-
+saveas(gcf, fullfile("wb_outputsQ4/","Table_indicators.png"));
 %---------------- Save results ----------------
 if ~exist('wb_outputsQ4', 'dir')
     mkdir('wb_outputsQ4'); 
 end
 writetable(featTbl, fullfile("wb_outputsQ4/", "classification_dataset.csv"));
+
